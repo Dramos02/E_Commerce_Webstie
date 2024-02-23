@@ -25,7 +25,7 @@ git clone https://github.com/your_username/KurtIc-E-Commerce.git
 
 2. Start a local server to run the website (you can use tools like Live Server in VSCode).
 
-##Usage
+## Usage
 -Navigate to the root directory of the project in your terminal.
 
 -Start a local server:
@@ -35,7 +35,7 @@ Copy code
 npm start
 Open your web browser and go to http://localhost:3000 (or the specified port) to view the KurtIc E-Commerce website.
 
-##Contributing
+## Contributing
 
 -Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 Fork the repository.
@@ -45,7 +45,7 @@ Commit your changes (git commit -am 'Add new feature').
 Push to the branch (git push origin feature/my-feature).
 Create a new Pull Request.
 
-##Acknowledgements
+## Acknowledgements
 -This project was inspired by [provide reference if applicable].
 -Special thanks to Kurt Colonia (@krcolonia) and Dominic Ramos (@Dramos02) for their contributions and assistance during development.
 

@@ -1,15 +1,67 @@
-body {
-  margin: 0;
-  padding: 0;
+@import "maincomponent.css";
 
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
+/* Header */
+.headerWrapper {
+  background-color: var(--kurticDarkOrange);
+  color: white;
 }
 
-.bodyFlex {
-  display: flex;
-  flex-flow: column;
+.header {
+  margin: 0;
+  padding: 0;
+}
+
+.header h1 {
+  margin: 5px;
+  padding: 0;
+}
+
+/* Body and Content */
+
+.main{
+  max-width: 1000px;
+  margin:auto;
+}
+
+.row,
+.row > .column{
+  padding: 8px;
+}
+
+.column{
+  background-color: var(--kurticGray);
+
+  float: left;
+  
+  width: 250px;
+  height: 250px;
+  
+  display: none;
+}
+.row::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+
+}
+
+.show {
+  display: block;
+}
+
+/* Footer */
+.footerWrapper {
+  background-color: var(--kurticDarkOrange);
+
+  color: white;
+  text-align: center;
 }
 

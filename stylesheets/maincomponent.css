@@ -1,3 +1,56 @@
 :root {
+  --kurticGray: #A9A9A9;
+  --kurticLightOrange: #FECDA6;
+  --kurticOrange: #FF9130;
+  --kurticDarkOrange: #FF9130;
+}
 
+* {
+  font-family: Comic Sans MS;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  /* min-height: 100vh; */
+}
+
+.bodyFlex {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: column;
+}
+
+.headerWrapper {
+  flex: 0 1 auto;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+}
+
+.contentWrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+
+  min-height: 100vh;
+}
+
+.footerWrapper {  
+  flex: 0 1 auto;
+  margin: 0;
+  z-index: 2;
+
+  left: 0;
+  bottom: 0;
 }

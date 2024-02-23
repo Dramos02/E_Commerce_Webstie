@@ -6,22 +6,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KurtIc E-Commerce</title>
 
+  <!-- Imported CSS -->
   <link rel="stylesheet" href="stylesheets/index.css">
+  <script src="scripts/index.js"></script>
 
 </head>
 
 <body>
+
+  <!-- Body Flex Container -->
   <div class="bodyFlex">
+
+    <!-- Header -->
     <div class="headerWrapper">
-      
+      <div class="header">
+        <h1>KurtIc E-Commerce</h1>
+      </div>
     </div>
+
+    <!-- Body and Content -->
     <div class="contentWrapper">
 
-    </div>
-    <div class="footerWrapepr">
+      <div class="main">
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')">All Products</button>
+          <button class="btn" onclick="filterSelection('cha')">Chassis Products</button>
+          <button class="btn" onclick="filterSelection('mb')">Motherboard Products</button>
+          <button class="btn" onclick="filterSelection('cpu')">Processor Products</button>
+          <button class="btn" onclick="filterSelection('cool')">Cooler Products</button>
+          <button class="btn" onclick="filterSelection('ram')">RAM / Memory Products</button>
+          <button class="btn" onclick="filterSelection('gpu')">Graphics Processing Products</button>
+          <button class="btn" onclick="filterSelection('storage')">Storage Products</button>
+          <button class="btn" onclick="filterSelection('power')">PSU Products</button>
 
+        </div>
+
+        <div class="row">
+          <div class="column storage">
+            <div class="content">
+              <img src="https://i.imgur.com/8qOzTme.jpg" alt="Samsung V-NAND SSD" style="width:100%">
+              <h4>Samsung V-NAND SSD</h4>
+              <p>Price: </p>
+            </div>
+          </div>
+          <div class="column gpu">
+            <div class="content">
+              <img src="https://i.imgur.com/vdjrAFj.jpg" alt="GEFORCE RTX 4060Ti" style="width:100%">
+              <h4>GEFORCE RTX 4060Ti</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column power">
+            <div class="content">
+              <img src="https://i.imgur.com/HJO7jyG.jpg" alt="ASUS ROG Strix 750W PSU" style="width:100%">
+              <h4>ASUS ROG Strix 750W PSU</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column ram">
+            <div class="content">
+              <img src="https://i.imgur.com/ElNM9nx.jpg" alt="GSkill Trident RGB 32GB 2x 16Gb 3600Mhz DDR4" style="width:100%">
+              <h4>GSkill Trident RGB 32GB 2x 16Gb 3600Mhz DDR4</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column cpu">
+            <div class="content">
+              <img src="https://i.imgur.com/uvJaToI.jpg" alt="Intel Core i9 CPU" style="width:100%">
+              <h4>Intel Core i9 CPU</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column gpu">
+            <div class="content">
+              <img src="https://i.imgur.com/5GPVrmF.png" alt="Gigabyte AMD Radeon RX 7900 XT" style="width:100%">
+              <h4>Gigabyte AMD Radeon RX 7900 XT</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column mb">
+            <div class="content">
+              <img src="https://i.imgur.com/5O3NasW.jpg" alt="ASUS ROG Strix Gaming AM4" style="width:100%">
+              <h4>ASUS ROG Strix Gaming AM4</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column cha">
+            <div class="content">
+              <img src="https://i.imgur.com/QrOxMBp.jpg" alt="ASUS ROG Helios" style="width:100%">
+              <h4>ASUS ROG Helios</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column cool">
+            <div class="content">
+              <img src="https://i.imgur.com/EmrVRw0.jpg" alt="ASUS Strix Cooler" style="width:100%">
+              <h4>ASUS Strix Cooler</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+          <div class="column cpu">
+            <div class="content">
+              <img src="https://i.imgur.com/dp11So0.jpg" alt="AMD Ryzen 9 5900x Processor" style="width:100%">
+              <h4>AMD Ryzen 9 5900x Processor</h4>
+              <p>Comes with various sizes</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <div class="footerWrapper">
+      <p>&copy; KurtIc Dynamics 2024 | 3BSIT-2 | Colonia, Kurt and Ramos, Dominic</p>
+    </div>
+
   </div>
+
 </body>
 
 </html>

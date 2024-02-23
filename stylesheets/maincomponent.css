@@ -37,7 +37,8 @@ body {
 .contentWrapper {
   flex: 1 1 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
   margin: 0;
   padding: 0;

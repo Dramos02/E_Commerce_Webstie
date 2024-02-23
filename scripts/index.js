@@ -1,6 +1,6 @@
-alert("welcome to KurtIc E-Commerce Website!");
+alert("Welcome to KurtIc E-Commerce Website!");
 
-filterSelection("all")
+var count = 0;
 
 function filterSelection(c) {
   var x, i;
@@ -45,8 +45,11 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-function addToCart() {
-  var product = document.getElementsByClassName("column");
+function addToCart(name) {
+  var prodCounter = document.getElementById('prodNum');
+  var prodName = document.getElementById('prodName')
+  count += 1;
 
-  alert()
+  prodCounter.innerHTML = '\$ ' + count.toString() + '.00'
+  prodName.innerHTML += name + ', '
 }

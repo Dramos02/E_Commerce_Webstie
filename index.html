@@ -56,8 +56,15 @@
             <div class="content">
               <img src="https://i.imgur.com/8qOzTme.jpg" alt="Samsung V-NAND SSD" style="width:100%">
               <h4>Samsung V-NAND SSD</h4>
-              <p>Price: 1</p>
-              <button onclick="addToCart('Samsung V-NAND SSD')">Add to Cart</button>
+              <p>Price: $100.00</p> <!-- Example price -->
+              <label for="quantity">Quantity:</label>
+              <select id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <!-- Add more options as needed -->
+              </select>
+              <button onclick="addToCart('Samsung V-NAND SSD', 100)">Add to Cart</button>
             </div>
           </div>
           <div class="column gpu">

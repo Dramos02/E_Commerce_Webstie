@@ -73,3 +73,13 @@ function addToCart(name, price) {
     prodName.innerHTML += productName;
   }
 }
+
+/*
+function addToCart(name) {
+  var prodCounter = document.getElementById('prodNum');
+  var prodName = document.getElementById('prodName')
+  count += 1;
+
+  prodCounter.innerHTML = '\$ ' + count.toString() + '.00'
+  prodName.innerHTML += name + ', '
+}*/

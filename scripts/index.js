@@ -45,11 +45,31 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
-function addToCart(name) {
+function addToCart(name, price) {
   var prodCounter = document.getElementById('prodNum');
-  var prodName = document.getElementById('prodName')
-  count += 1;
+  var prodName = document.getElementById('prodName');
+  var quantity = parseInt(document.getElementById('quantity').value);
 
-  prodCounter.innerHTML = '\$ ' + count.toString() + '.00'
-  prodName.innerHTML += name + ', '
+  // Update total price
+  var totalPrice = parseFloat(prodCounter.innerHTML.replace('$ ', '') || 0);
+  totalPrice += price * quantity;
+  prodCounter.innerHTML = '$ ' + totalPrice.toFixed(2);
+
+  // Check if product already exists in the list
+  var existingProduct = false;
+  var productName = name + ' (Quantity: ' + quantity + ')';
+  var prodListNames = prodName.innerHTML.split(', ');
+  prodListNames.forEach(function(item) {
+    if (item.trim() === productName) {
+      existingProduct = true;
+    }
+  });
+
+  // If product doesn't exist, add it to the list
+  if (!existingProduct) {
+    if (prodName.innerHTML !== '') {
+      prodName.innerHTML += ', ';
+    }
+    prodName.innerHTML += productName;
+  }
 }

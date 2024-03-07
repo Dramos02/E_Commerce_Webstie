@@ -47,6 +47,22 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
+function toggleCart() {
+  const cart = document.getElementById('cartItems');
+  const toggleButton = document.getElementById('toggleCartButton');
+  
+  if (cart.classList.contains('minimized')) {
+    // Show cart
+    cart.classList.remove('minimized');
+    toggleButton.innerText = 'Minimize Cart';
+  } else {
+    // Minimize cart
+    cart.classList.add('minimized');
+    toggleButton.innerText = 'Show Cart';
+  }
+}
+
+
 function addToCart(productName, price) {
   const existingItemIndex = cartItems.findIndex(item => item.productName === productName);
   if (existingItemIndex !== -1) {
@@ -109,6 +125,8 @@ function removeFromCart(productName) {
   cartItems = cartItems.filter(item => item.productName !== productName);
   updateCart();
 }
+
+
 /*alert("Welcome to KurtIc E-Commerce Website!");
 
 var count = 0;

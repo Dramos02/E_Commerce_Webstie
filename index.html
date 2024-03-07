@@ -26,8 +26,13 @@
 
     <!-- Body and Content-->
     <div class="contentWrapper">
-      <div id="cartItems" class="cartItems"></div>
-      <!--<div class="productList">
+
+      <div class="cartContainer">
+        <button id="toggleCartButton" onclick="toggleCart()">Toggle Cart</button>
+        <div id="cartItems" class="cartItems"></div>
+      </div>
+      <!--<div id="cartItems" class="cartItems"></div>
+      <div class="productList">
         <h1 class="prodTitle">Products Added: </h1>
         <div class="prodListNames">
           <h4 id="prodName"></h4>
@@ -61,7 +66,7 @@
               <img src="https://i.imgur.com/8qOzTme.jpg" alt="Samsung V-NAND SSD" style="width:100%">
               <h4>Samsung V-NAND SSD</h4>
               <p>Price: $50.00</p> <!-- Example price -->
-              <button onclick="addToCart('Samsung V-NAND SSD', 50)">Add to Cart</button>
+              <button onclick="addToCart('Samsung V-NAND SSD', 100)">Add to Cart</button>
             </div>
           </div>
           <div class="column gpu">

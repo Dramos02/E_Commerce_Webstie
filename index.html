@@ -29,7 +29,11 @@
 
       <div class="cartContainer">
         <button id="toggleCartButton" onclick="toggleCart()">Toggle Cart</button>
-        <div id="cartItems" class="cartItems"></div>
+        <div id="cartItems" class="cartItems">
+
+        </div>
+        <button id="proceedToCheckoutButton" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        <button id="cancelCheckoutButton" onclick="cancelCheckout()">Cancel Checkout</button>
       </div>
       <!--<div id="cartItems" class="cartItems"></div>
       <div class="productList">
@@ -91,7 +95,7 @@
                 style="width:100%">
               <h4>GSkill Trident RGB 32GB 2x 16Gb 3600Mhz DDR4</h4>
               <p>Price: $400.00</p>
-              <button onclick="addToCart('>GSkill Trident RGB 32GB 2x 16Gb 3600Mhz DDR4', 400)">Add to Cart</button>
+              <button onclick="addToCart('GSkill Trident RGB 32GB 2x 16Gb 3600Mhz DDR4', 400)">Add to Cart</button>
             </div>
           </div>
           <div class="column cpu">

@@ -80,6 +80,28 @@ body {
   background-color: #45a049; /* Darker green background on hover */
 }
 
+/* Style for the Proceed to Checkout button */
+.cartContainer button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Primary button color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the Proceed to Checkout button */
+.cartContainer button:hover {
+  background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+/* Initially hide the Proceed to Checkout button */
+#proceedToCheckoutButton {
+  display: none;
+}
+
+
 
 /* Style for the cart item container */
 .cartItem {
@@ -164,6 +186,23 @@ body {
 /* Hover effect for the button inside the card */
 .column button:hover {
   background-color: #0056b3;
+}
+
+/* Style for the "Cancel Checkout" button */
+#cancelCheckoutButton {
+  padding: 10px 20px;
+  background-color: #dc3545; /* Danger color for cancel action */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none; 
+}
+
+/* Hover effect for the "Cancel Checkout" button */
+#cancelCheckoutButton:hover {
+  background-color: #c82333; /* Darker shade of danger color on hover */
 }
 
 

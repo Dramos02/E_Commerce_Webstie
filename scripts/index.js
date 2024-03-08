@@ -50,6 +50,29 @@ for (var i = 0; i < btns.length; i++) {
 function toggleCart() {
   const cart = document.getElementById('cartItems');
   const toggleButton = document.getElementById('toggleCartButton');
+  const proceedToCheckoutButton = document.getElementById('proceedToCheckoutButton');
+  const cancelCheckoutButton = document.getElementById('cancelCheckoutButton');
+  
+  if (cart.classList.contains('minimized')) {
+    // Show cart
+    cart.classList.remove('minimized');
+    toggleButton.innerText = 'Minimize Cart';
+    proceedToCheckoutButton.style.display = 'block'; // Show Proceed to Checkout button
+    cancelCheckoutButton.style.display = 'inline-block'; // Show Cancel button
+  } else {
+    // Minimize cart
+    cart.classList.add('minimized');
+    toggleButton.innerText = 'Show Cart';
+    proceedToCheckoutButton.style.display = 'none'; // Hide Proceed to Checkout button
+    cancelCheckoutButton.style.display = 'none'; // Hide the Cancel Button
+  }
+}
+
+
+/*
+function toggleCart() {
+  const cart = document.getElementById('cartItems');
+  const toggleButton = document.getElementById('toggleCartButton');
   
   if (cart.classList.contains('minimized')) {
     // Show cart
@@ -60,8 +83,7 @@ function toggleCart() {
     cart.classList.add('minimized');
     toggleButton.innerText = 'Show Cart';
   }
-}
-
+}*/
 
 function addToCart(productName, price) {
   const existingItemIndex = cartItems.findIndex(item => item.productName === productName);
@@ -125,6 +147,133 @@ function removeFromCart(productName) {
   cartItems = cartItems.filter(item => item.productName !== productName);
   updateCart();
 }
+
+
+function proceedToCheckout() {
+  if (cartItems.length === 0) {
+    alert('Your cart is empty. Please add items before proceeding to checkout.');
+    return;
+  }
+  const checkoutContent = generateCheckoutContent();
+  
+  // Prompt the user with a confirmation dialog
+  if (window.confirm('Do you want to download the receipt?')) {
+    downloadReceipt(checkoutContent, 'receipt.txt');
+  }
+}
+
+function cancelCheckout() {
+  // Clear cart items array
+  cartItems = [];
+  // Update the cart display
+  updateCart();
+}
+
+function downloadReceipt(content, filename) {
+  const blob = new Blob([content], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.download = filename;
+  link.click();
+}
+
+function generateCheckoutContent() {
+  let checkoutContent = `===================================================
+                     KurtIc E-Commerce Store Receipt
+===================================================
+
+Date/Time: ${getFormattedDateTime()}
+
+Checkout Details:
+-----------------------------------------------\n`;
+
+  cartItems.forEach(item => {
+    checkoutContent += `${item.productName} - Quantity: ${item.quantity} - Price: $${(item.price * item.quantity).toFixed(2)}\n`;
+  });
+
+  checkoutContent += '-----------------------------------------------\n';
+  checkoutContent += `Total: $${calculateTotal().toFixed(2)}\n`;
+
+  return checkoutContent;
+}
+
+function calculateTotal() {
+  let total = 0;
+  cartItems.forEach(item => {
+    total += item.price * item.quantity;
+  });
+  return total;
+}
+
+function getFormattedDateTime() {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+  return now.toLocaleDateString('en-US', options);
+}
+/*function proceedToCheckout() {
+  const checkoutContent = generateCheckoutContent();
+  if (window.confirm('Do you want to download the receipt?')) {
+    downloadReceipt(checkoutContent, 'receipt.txt');
+  }
+}
+
+function downloadReceipt(content, filename) {
+  const blob = new Blob([content], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.download = filename;
+  link.click();
+}
+
+function generateCheckoutContent() {
+  let checkoutContent = 'Checkout Details:\n';
+  checkoutContent += '-------------------------\n';
+
+  cartItems.forEach(item => {
+    checkoutContent += `${item.productName} - Quantity: ${item.quantity} - Price: $${(item.price * item.quantity).toFixed(2)}\n`;
+  });
+
+  checkoutContent += '-------------------------\n';
+  checkoutContent += `Total: $${calculateTotal().toFixed(2)}\n`;
+
+  return checkoutContent;
+}
+
+function calculateTotal() {
+  let total = 0;
+  cartItems.forEach(item => {
+    total += item.price * item.quantity;
+  });
+  return total;
+}
+/*function proceedToCheckout() {
+  const checkoutContent = generateCheckoutContent();
+  alert(checkoutContent);
+}
+
+function generateCheckoutContent() {
+  let checkoutContent = 'Checkout Details:\n';
+  checkoutContent += '-------------------------\n';
+
+  cartItems.forEach(item => {
+    checkoutContent += `${item.productName} - Quantity: ${item.quantity} - Price: $${(item.price * item.quantity).toFixed(2)}\n`;
+  });
+
+  checkoutContent += '-------------------------\n';
+  checkoutContent += `Total: $${calculateTotal().toFixed(2)}\n`;
+
+  return checkoutContent;
+}
+
+function calculateTotal() {
+  let total = 0;
+  cartItems.forEach(item => {
+    total += item.price * item.quantity;
+  });
+  return total;
+}
+
+
 
 
 /*alert("Welcome to KurtIc E-Commerce Website!");

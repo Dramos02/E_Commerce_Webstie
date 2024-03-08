@@ -52,7 +52,7 @@ function toggleCart() {
   const toggleButton = document.getElementById('toggleCartButton');
   const proceedToCheckoutButton = document.getElementById('proceedToCheckoutButton');
   const cancelCheckoutButton = document.getElementById('cancelCheckoutButton');
-  
+
   if (cart.classList.contains('minimized')) {
     // Show cart
     cart.classList.remove('minimized');
@@ -109,9 +109,9 @@ function updateCart() {
     itemElement.innerHTML = `
       <span>${item.productName}</span>
       <button onclick="decrementQuantity('${item.productName}')">-</button>
-      <span>${item.quantity}</span>
+      <span><input type="number" class="itemQuan" value="${item.quantity}" onchange="updateItemPrice(this, '${item.productName}', ${item.price})"></input></span>
       <button onclick="incrementQuantity('${item.productName}')">+</button>
-      <span>$${(item.price * item.quantity).toFixed(2)}</span>
+      <span id="price">$${(item.price * item.quantity).toFixed(2)}</span>
       <button onclick="removeFromCart('${item.productName}')">Remove</button>
     `;
     cartElement.appendChild(itemElement);
@@ -123,6 +123,20 @@ function updateCart() {
   const totalElement = document.createElement('div');
   totalElement.innerHTML = `Total: $${total.toFixed(2)}`;
   cartElement.appendChild(totalElement);
+}
+
+function updateItemPrice(inputElement, productName, price) {
+  const newQuantity = parseInt(inputElement.value);
+  const updatedPrice = price * newQuantity;
+  const priceElement = inputElement.parentNode.nextElementSibling; // Get the next sibling, which is the span with id 'price'
+  priceElement.innerText = `$${updatedPrice.toFixed(2)}`;
+
+  const itemIndex = cartItems.findIndex(item => item.productName === productName);
+  if (itemIndex !== -1) {
+    cartItems[itemIndex].quantity = newQuantity;
+  }
+
+  updateCart(); // Update the entire cart to reflect changes
 }
 
 function decrementQuantity(productName) {
@@ -155,7 +169,7 @@ function proceedToCheckout() {
     return;
   }
   const checkoutContent = generateCheckoutContent();
-  
+
   // Prompt the user with a confirmation dialog
   if (window.confirm('Do you want to download the receipt?')) {
     downloadReceipt(checkoutContent, 'receipt.txt');

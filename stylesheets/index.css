@@ -89,6 +89,10 @@
 
 }
 
+.itemQuan {
+  width:25px;
+}
+
 .show {
   display: block;
 }
